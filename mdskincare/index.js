@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 app.use(express.urlencoded({extended : false}));
 app.use(express.static(__dirname + '/C5S'))
+app.use(express.static(__dirname + '/J5'))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine' , 'ejs');
 let PORT = process.env.PORT || 5565 ;
