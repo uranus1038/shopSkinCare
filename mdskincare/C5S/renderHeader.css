@@ -1,0 +1,203 @@
+/* about varibal color */
+:root
+{
+    --green:#27ae60 ;
+    --black:#192a56 ;
+    --light-color:#666;
+    
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+body
+{
+    font-family: 'Mali', cursive;
+    font-family: 'Sarabun', sans-serif;
+}
+*{
+    margin: 0; padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none; text-transform: capitalize;
+     outline: none; border: none;
+    transition: all .2s linear; 
+    font-size: 80.5%;
+}
+/* about pagr html */
+้html
+{
+  
+    overflow: hidden;
+    scroll-padding: 5.5rem;
+    scroll-behavior: smooth;
+}
+/* About header */
+header
+{
+    
+    position: fixed;
+    top:0; left: 0; right:0 ;
+    /*  */
+    background:#fff ;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: right;
+    justify-content:space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+header .logo
+{
+    color:gold;
+    font-size: 2.5rem;
+    font-weight: bolder;
+   
+}
+header .navbar a
+{
+    font-size: 1.7rem;
+    border-radius: 5rem;
+    padding: .5rem 1.5rem;
+    color:var(--light-color);
+}
+header .navbar a.active,
+header .navbar a:hover
+{
+    color:#fff;
+    background-color:gold;
+}
+
+/* about Icon */
+header .icons i,
+header .icons a
+{
+    cursor: pointer;
+    margin-left: .5rem ;
+    height: 4.5rem; 
+    line-height: 4.5rem;
+    width: 4.5rem;  
+    text-align: center;
+    font-size: 1.7rem;
+    color:var(--black); 
+    border-radius: 50%;
+    background: #eee;
+}
+header .icons i:hover,
+header .icons a:hover
+{
+    color: #fff;
+    background: gold;
+    transform: rotate(360deg);
+}
+/* about Icon menubar*/
+header .icons #menu-bars
+{
+    display: none;
+} 
+
+/*media queries*/
+
+@media (max-width:1300px)
+{
+    html
+    {
+        font-size: 60%; 
+
+    }
+   
+}
+
+
+@media (max-width:925px)
+{  
+    header .navbar #message
+    {
+        display: none;
+    }
+}
+@media (max-width:700px)
+{  
+    header .navbar #reviewProduct
+    {
+        display: none;
+    }
+}
+
+
+@media (max-width:500px)
+{  
+    html
+    {
+        font-size: 50%; 
+
+    }
+    header .icons #IShopcart
+    {
+        display: none;
+    }
+    header .icons #menu-bars
+    {
+        display: inline-block;
+        
+    }
+    header .navbar
+    {
+        position: absolute;
+        top: 100%; right: 0; left: 0;
+        background: #fff;
+        border-top:.5rem solid rgba(230, 255, 9,0.2) ;
+        border-bottom:.5rem solid rgba(230, 255, 9,0.2) ;
+        padding: 1rem;
+        clip-path: polygon(0 0 ,100% 0 ,100% 0,0 0);
+    }
+    header .navbar.active
+    {
+        clip-path: polygon(0 0 ,100% 0 ,100% 100%,0 100%);
+    }
+    header .navbar a
+    {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background-color: #eee;
+        border-radius: 0%;
+    }
+    header .navbar #localProduct
+    {
+        
+        color:var(--black);
+        background-color: #eee;
+        border-radius: 0%;
+        
+    }
+    header .navbar #localProduct:hover
+    {
+        
+        color:#fff;
+        background-color: gold;
+        
+    }
+    header .navbar #localProduct
+    {
+        display: flex;
+    }
+    header .navbar #reviewProduct
+    {
+        display: flex;
+    }
+    header .navbar #message
+    {
+        display: flex;
+    }
+    header .navbar .active
+    {
+        display: flex;
+    }
+    
+}
+@media (max-width:280px)
+{  
+    
+    
+    
+}
+
+
