@@ -18,7 +18,7 @@ body
     text-decoration: none; text-transform: capitalize;
      outline: none; border: none;
     transition: all .2s linear; 
-    font-size: 80.5%;
+    font-size: 60.5%;
 }
 /* about pagr html */
 ้html
@@ -50,8 +50,13 @@ header .logo
     font-weight: bolder;
    
 }
+header .navbar 
+{
+    padding-top: 1rem;
+}
 header .navbar a
 {
+    
     font-size: 1.7rem;
     border-radius: 5rem;
     padding: .5rem 1.5rem;
@@ -78,6 +83,8 @@ header .icons a
     color:var(--black); 
     border-radius: 50%;
     background: #eee;
+  
+    
 }
 header .icons i:hover,
 header .icons a:hover
@@ -135,7 +142,6 @@ header .icons #menu-bars
     header .icons #menu-bars
     {
         display: inline-block;
-        
     }
     header .navbar
     {
@@ -193,10 +199,12 @@ header .icons #menu-bars
     }
     
 }
-@media (max-width:280px)
+@media (max-width:490px)
 {  
     
-    
+    header{
+        padding: 1rem 0.5rem;
+    }
     
 }
 

@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/J5'))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine' , 'ejs');
 let PORT = process.env.PORT || 5565 ;
-app.get('/', (req,res) => {
+app.get('/', (req,res) => { 
     res.render('moblieHome');
 });
 
