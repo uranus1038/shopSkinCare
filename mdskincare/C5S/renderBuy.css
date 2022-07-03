@@ -1,0 +1,110 @@
+:root
+{
+    --green:#27ae60 ;
+    --black:#192a56 ;
+    --light-color:#666;
+    
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+.boxBuy
+{
+   
+    
+    height: auto;
+    margin-top: 10rem;
+  
+    padding-top: 5rem;
+    
+}
+.boxBuy .box-Container
+{
+    text-align: center;
+    padding-top:8rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    
+}
+.boxBuy .box-Container .boxA
+{
+    border: 6px solid var(--black);
+    border-radius: 24px;
+    padding: 1.5% 1.5%;
+   
+    margin: 0 3%;
+}
+.boxBuy .box-Container img
+{
+  margin-bottom: 3% ;
+  border-radius: 24px;
+}
+
+.boxBuy .box-Container .boxA h3
+{
+    font-size: 3rem;
+    color: var(--black);
+}
+.boxBuy .box-Container .boxA .btnBuy
+{
+    margin-left:  24px;
+    background-color: red;
+    border-radius: 24px;
+    padding: 3% 10%;
+    color: white;
+    font-size: 2rem;
+  
+}
+.boxBuy .box-Container .boxA .btnBuy:hover
+{
+    background-color: blue;
+}
+.boxBuy .box-Container .boxA span
+{
+    font-size: 3rem;
+    color: var(--black);
+}
+
+
+.boxBuy .sub-heading
+{
+    color: var(--black);
+    font-size: 22px;
+    text-align: center;
+}
+.boxBuy .heading
+{
+    color: var(--black);
+    font-size: 45px;
+    text-align: center;
+}
+
+@media (max-width:588px)
+{
+    .boxBuy .box-Container .boxA
+    {
+        padding:2rem 0px;
+        
+        margin-bottom: 2rem;
+    }
+    .boxBuy .box-Container 
+    {
+        display: block;
+    }
+    .boxBuy .box-Container .boxA .btnBuy
+    {
+        background-color: red;
+        border-radius: 24px;
+        padding: 2% 10%;
+        color: white;
+        font-size: 1.8rem;
+    
+    }
+}
+@media (max-width:408px)
+{
+    .boxBuy .box-Container .boxA img
+    {
+        width: 90%;
+        height: auto;
+    }
+}

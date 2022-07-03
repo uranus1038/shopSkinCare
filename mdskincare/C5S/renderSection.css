@@ -9,11 +9,10 @@
 section
 {
     padding: 2rem 9%;
+    
+   
 }
-section:nth-child(even)
-{
-    background-color: #eee;
-}
+
 .home .home-slide .slide 
 {
     display: flex;

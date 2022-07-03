@@ -46,6 +46,7 @@
 .about .row .imgRe 
 {
     flex: 1 1 45rem;
+    margin-bottom: 30px;
 }
 
 .about .row  .content
@@ -85,18 +86,31 @@
     justify-content: center;
     gap:1rem;
     flex:1 1  17rem ;
-  
 }
 .about .row .content .icons-container .icons p
 {
     font-size: 2rem;
     color: var(--black);
+
 }
 .about .row .content .icons-container .icons span
 {
     font-size: 1.5rem;
     color: var(--black);
 }
+.review 
+{
+    background-color: rgb(253, 253, 229);
+    padding-bottom: 10rem;
+   display: flex;
+   justify-content: center;
+}
+.review .reviewA img
+{
+    width: 510px;
+    height: auto;
+}
+
 
 @media (max-width:600px)
 {
@@ -111,5 +125,43 @@
       
        font-size: 1.8rem;
       
+    }
+}
+@media (max-width:1072px)
+{
+    .review .reviewA img
+{
+    width: 410px;
+    height: auto;
+}
+
+}
+@media (max-width:855px)
+{
+    .review .reviewA img
+{
+    width: 330px;
+    height: auto;
+}
+}
+@media (max-width:660px)
+{
+    .review .reviewA img
+{
+    width: 230px;
+    height: auto;
+}
+}
+@media (max-width:470px)
+{
+    .review 
+    {
+       display: block;
+       
+    }
+    .review .reviewA img
+    {
+        width: 100%;
+        height: auto;
     }
 }
