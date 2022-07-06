@@ -13,25 +13,21 @@
     color: var(--black);
 }
 
-.formData .dataUser form
-{
- font-size: 1.8rem;   
 
-}
 .formData .dataUser h2
 {
- font-size: 1.8rem;   
+ font-size: 2.2rem;   
 
 }
 .formData .dataUser h1
 {
- font-size: 1.3rem
+ font-size: 1.7rem
  ;   
  padding-top: 1%;
 }
 .formData .dataUser span
 {
- font-size: 1.4rem;
+ font-size: 1.8rem;
  color: red;
  
 }
@@ -48,8 +44,8 @@
      border:1px #192a56 solid;
      padding:1.5rem 0%; border-radius: 5px; 
      padding-left: 10px; 
-     width: 30rem; margin-bottom: 1rem;
-     font-size: 12px;
+     width: 43rem; margin-bottom: 1rem;
+     font-size: 16px;
 }
 .formData .dataUser .text-a .t-texta
 {
@@ -58,20 +54,50 @@
      padding:1rem 0%; border-radius: 5px; 
      padding-left: 10px; 
      padding-bottom: 5rem;
-     width: 60.5rem; margin-bottom: 1rem;
-     font-size: 12px;
+     width: 86.5rem; margin-bottom: 1rem;
+     font-size: 16px;
+}
+.formData .dataUser .text-a .n-btn
+{
+    
+     border:1px #192a56 solid;
+     background-color: gold;
+     color: purple;
+     padding:1rem 0%; border-radius: 5px; 
+     padding-left: 10px; 
+     padding-bottom: 1.5rem;
+     width: 86.5rem; margin-bottom: 1rem;
+     font-size: 16px;
+}
+.formData .dataUser .text-a .n-btn:hover
+{
+    
+   
+     background-color: blue;
+     color:white;
+    
 }
 
-@media (max-width:710px)
+
+@media (max-width:880px)
 {
+   
+  
     .formData .dataUser .text-a .n-texta
     {
         width: 40%;
+        height: auto;
         margin-bottom: 2rem;
     }
 
     .formData .dataUser .text-a .t-texta
     {
+        width: 80%  ;
+        margin-bottom: 2rem;
+    }
+    .formData .dataUser .text-a .n-btn
+    {
+        
         width: 80%  ;
         margin-bottom: 2rem;
     }
