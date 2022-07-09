@@ -26,16 +26,13 @@
     </header>
     <div class="formData" id="formData">
         <div class="dataUser">
-            <form action="">
-                <div class="headx">
-                    <h2 class="sub-head">ตรวจสอบข้อมูลการสั่งซื้อ<h2>
-                        <h1 class="head">กรุณาใส่ชื่อและเบอร์มือถือของท่าน <span>* กรุณากรอกเบอร์โทรและรหัสไปรษณีย์ที่ถูกต้องเราจะจัดส่งให้เร็วขึ้นนะคะ</span> </h1>
-                </div>
-               
+            <form action="/order" method="post">
+                 <h2 class="sub-head">ตรวจสอบข้อมูลการสั่งซื้อ<h2>
+                  <h1 class="head">กรุณาใส่ชื่อและเบอร์มือถือของท่าน <span>* กรุณากรอกเบอร์โทรและรหัสไปรษณีย์ที่ถูกต้องเราจะจัดส่งให้เร็วขึ้นนะคะ</span> </h1>      
                 <div class="text-a">
-                    <input class="n-texta" type="text" placeholder="ชื่อ-นามสกุล *" >
+                    <input name="name" class="n-texta" type="text" placeholder="ชื่อ-นามสกุล *" >
                     <input class="n-texta" type="number" placeholder="เบอร์โทรศัพท์ *" ><br>
-                    <input class="t-texta" type="text" placeholder="ที่อยู่จัดส่ง *"><br>
+                    <textarea class="t-texta" placeholder="ที่อยู่จัดส่ง *"></textarea><br>
                     <input class="n-texta" type="text" placeholder="จังหวัด *" >
                     <input class="n-texta" type="text" placeholder="ตำบล / แขวง *" ><br>
                     <input class="n-texta" type="text" placeholder="อำเภอ / เขต *" >
