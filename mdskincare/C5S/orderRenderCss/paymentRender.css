@@ -1,0 +1,24 @@
+
+:root
+{
+    --green:#27ae60 ;
+    --black:#192a56 ;
+    --light-color:#666; 
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+.payment
+{
+    color: var(--black);
+    font-size: 20px;
+    width: 25rem;
+    margin: 2rem auto;
+    border: 1px var(--black) solid;
+    padding: 1.8rem;
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+}
+.payment i
+{
+   font-size: 20px;
+   color: var(--black);
+}

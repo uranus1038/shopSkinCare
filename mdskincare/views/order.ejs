@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="renderHeader.css">
     <link rel="stylesheet" href="renderOrderform.css">
+    <link rel="stylesheet" href="renderError.css">
+    <link rel="stylesheet" href="paymentRender.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>มาร์หน้าทองคำสวยขั้นเทพ พี่ดม</title>
 </head>
 <body>
@@ -20,33 +23,42 @@
             <a class="active" href="#boxBuy">สั่งซื้อสินค้า</a>
         </nav>
         <div class="icons">
-            <a href="" class="fa fa-shopping-cart" id="IShopcart"></a>
+            <a href="#formData" class="fa fa-shopping-cart" id="IShopcart"></a>
             <i id="menu-bars" class="fa fa-bars"></i>
         </div>
     </header>
     <div class="formData" id="formData">
         <div class="dataUser">
-            <form action="/order" method="post">
+            <form action="/order" method="post" novalidate>
                  <h2 class="sub-head">ตรวจสอบข้อมูลการสั่งซื้อ<h2>
-                  <h1 class="head">กรุณาใส่ชื่อและเบอร์มือถือของท่าน <span>* กรุณากรอกเบอร์โทรและรหัสไปรษณีย์ที่ถูกต้องเราจะจัดส่งให้เร็วขึ้นนะคะ</span> </h1>      
+                  <h1 class="head">กรุณาใส่ชื่อและเบอร์มือถือของท่าน <span>* กรุณากรอกเบอร์โทรและรหัสไปรษณีย์ที่ถูกต้องเราจะจัดส่งให้เร็วขึ้นนะคะ</span> </h1>     
+                  <% if(locals.register_error)
+                  {
+                      register_error.forEach(function(error_msg){ %>
+                          <div class="error" ><%= error_msg %></div>
+                      <%} )   
+              }%> 
                 <div class="text-a">
-                    <input name="name" class="n-texta" type="text" placeholder="ชื่อ-นามสกุล *" >
-                    <input class="n-texta" type="number" placeholder="เบอร์โทรศัพท์ *" ><br>
-                    <textarea class="t-texta" placeholder="ที่อยู่จัดส่ง *"></textarea><br>
-                    <input class="n-texta" type="text" placeholder="จังหวัด *" >
-                    <input class="n-texta" type="text" placeholder="ตำบล / แขวง *" ><br>
-                    <input class="n-texta" type="text" placeholder="อำเภอ / เขต *" >
-                    <input class="n-texta" type="text" placeholder="รหัสไปษณีย์ *" ><br>
-                    <input class="n-texta" type="text" placeholder="อีเมล (ไม่บังคับต้องกรอก) *" >
-                    <input class="n-texta" type="text" placeholder="ไลน์ไอดี (ไม่บังคับต้องกรอก) *" ><br>
+                    <input value="<%= (locals.old_data) ? old_data.name : ''  %>" name="name" class="n-texta" type="text" placeholder="ชื่อ-นามสกุล *" >
+                    <input value="<%= (locals.old_data) ? old_data.tel : ''  %>"  name="tel" class="n-texta" type="number" placeholder="เบอร์โทรศัพท์ *" ><br>
+                    <textarea value="<%= (locals.old_data) ? old_data.address : ''  %>" name="address" class="t-texta" placeholder="ที่อยู่จัดส่ง *" required></textarea><br>
+                    <input value="<%= (locals.old_data) ? old_data.province : ''  %>" name="province" class="n-texta" type="text" placeholder="จังหวัด *" >
+                    <input value="<%= (locals.old_data) ? old_data.district : ''  %>" name="district" class="n-texta" type="text" placeholder="ตำบล / แขวง *" ><br>
+                    <input value="<%= (locals.old_data) ? old_data.county : ''  %>" name="county" class="n-texta" type="text" placeholder="อำเภอ / เขต *" >
+                    <input value="<%= (locals.old_data) ? old_data.postalcode : ''  %>" name="postalcode" class="n-texta" type="number" placeholder="รหัสไปษณีย์ *" ><br>
+                    <input value="<%= (locals.old_data) ? old_data.email : ''  %>" name="email" class="n-texta" type="email" placeholder="อีเมล (ไม่บังคับต้องกรอก) *">
+                    <input value="<%= (locals.old_data) ? old_data.line : ''  %>" name="line" class="n-texta" type="text" placeholder="ไลน์ไอดี (ไม่บังคับต้องกรอก) *" ><br>
+                    <div class="payment">
+                        <i class='fas fa-shipping-fast' ></i>
+                        <input type="radio" checked> เก็บเงินปลายทาง<br>
+                    </div><br>
                     <button class="n-btn" type="submit">ยืนยันการสั่งซื้อ</button>
+
                 </div>
                 
             </form>
 
-        </div>
-      
-           
+        </div>           
     </div>
     <script src="getMenubar.js"></script>
 </body>

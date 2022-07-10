@@ -1,0 +1,21 @@
+.dataUser .error
+{
+    margin-top: 1rem;
+    color: red;
+    font-size: 2rem;
+    border: 3px solid pink;
+    padding: 2rem;
+    border-radius: 13px;
+    display: block;
+    margin:2rem auto;
+ 
+  width: 86.5rem;
+ 
+}
+@media (max-width:880px)
+{
+    .dataUser .error
+    {
+        width: 99%  ;
+    }
+}
