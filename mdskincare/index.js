@@ -21,5 +21,8 @@ app.get('/', (req,res) => {
 app.get('/md-skincare-cream', (req,res) => { 
     res.render('order');
 });
+app.get('/test-Confirm', (req,res) => { 
+    res.render('orderConfirm');
+});
 
 app.listen(PORT ,()=> console.log("Server Start Port 5565"));
