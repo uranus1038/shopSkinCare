@@ -24,7 +24,13 @@ order = app.post('/',
     {
         await res.render('orderConfirm',
         {
-            dataUserX : req.body
+            dataUserX_name : req.body.name,
+            dataUserX_tel:req.body.tel ,
+            dataUserX_address: req.body.address,
+            dataUserX_province: req.body.province,
+            dataUserX_district:req.body.district ,
+            dataUserX_county: req.body.county,
+            dataUserX_postalcode: req.body.postalcode,
         });
     }
     else
@@ -40,5 +46,4 @@ order = app.post('/',
             })
     }
 });
-
 module.exports = order;
