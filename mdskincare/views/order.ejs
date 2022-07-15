@@ -46,14 +46,13 @@
                     <input value="<%= (locals.old_data) ? old_data.district : ''  %>" name="district" class="n-texta" type="text" placeholder="ตำบล / แขวง *" ><br>
                     <input value="<%= (locals.old_data) ? old_data.county : ''  %>" name="county" class="n-texta" type="text" placeholder="อำเภอ / เขต *" >
                     <input value="<%= (locals.old_data) ? old_data.postalcode : ''  %>" name="postalcode" class="n-texta" type="number" placeholder="รหัสไปษณีย์ *" ><br>
-                    <input value="<%= (locals.old_data) ? old_data.email : ''  %>" name="email" class="n-texta" type="email" placeholder="อีเมล (ไม่บังคับต้องกรอก) *">
-                    <input value="<%= (locals.old_data) ? old_data.line : ''  %>" name="line" class="n-texta" type="text" placeholder="ไลน์ไอดี (ไม่บังคับต้องกรอก) *" ><br>
+                    <input name="email" class="n-texta" type="email" placeholder="อีเมล (ไม่บังคับต้องกรอก) *">
+                    <input name="line" class="n-texta" type="text" placeholder="ไลน์ไอดี (ไม่บังคับต้องกรอก) *" ><br>
                     <div class="payment">
                         <i class='fas fa-shipping-fast' ></i>
                         <input type="radio" checked> เก็บเงินปลายทาง<br>
                     </div><br>
                     <button class="n-btn" type="submit">ยืนยันการสั่งซื้อ</button>
-
                 </div>
                 
             </form>

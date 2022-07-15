@@ -15,6 +15,7 @@ let PORT = process.env.PORT || 5565 ;
 // Aumx.save().then(()=>{console.log("success")});
 
 app.use('/order',OrderX) ;
+app.use('/order/success',OrderX) ; 
 app.get('/', (req,res) => { 
     res.render('moblieHome');
 });

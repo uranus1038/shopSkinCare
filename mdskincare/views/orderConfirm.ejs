@@ -9,29 +9,25 @@
 </head>
 <body>
      <div class="container p-4">
-            
           <div class="row border bg-light border-info pt-3 rounded-3">
             <h4 class="fw-bold fs-5 text-center">โปรดตรวจสอบข้อมูลของท่านอีกครั้ง</h4>
-            <div class="col-9 p-2 fs-5 d-block">ชื่อ-นามสกุล* : <%=dataUserX_name %></div>
-            <div class="col-9 p-2 fs-5 d-block">เบอร์โทรศัพท์* : <%=dataUserX_tel %></div>
-            <div class="col-9 p-2 fs-5 d-block">ที่อยู่จัดส่ง* : <%=dataUserX_address %></div>
-            <div class="col-9 p-2 fs-5 d-block">จังหวัด* : <%=dataUserX_province %></div>
-            <div class="col-9 p-2 fs-5 d-block">ตำบล/แขวง* <%=dataUserX_district %>:</div>
-            <div class="col-9 p-2 fs-5 d-block">อำเภอ/เขต* : <%=dataUserX_county %></div>
-            <div class="col-9 p-2 fs-5 d-block">รหัสไปษณีย์* : <%=dataUserX_postalcode %></div>
-            <div class="col-9 p-2 fs-5 d-block">อีเมล* :</div>
-            <div class="col-9 p-2 fs-5 d-block">ไลน์ไอดี* :</div>
+            <div class="col-9 p-2 fs-5 d-block">ชื่อ-นามสกุล* : <%=dataUserX.name %></div>
+            <div class="col-9 p-2 fs-5 d-block">เบอร์โทรศัพท์* : <%=dataUserX.tel %></div>
+            <div class="col-9 p-2 fs-5 d-block">ที่อยู่จัดส่ง* : <%=dataUserX.address %></div>
+            <div class="col-9 p-2 fs-5 d-block">จังหวัด* : <%=dataUserX.province %></div>
+            <div class="col-9 p-2 fs-5 d-block">ตำบล/แขวง* <%=dataUserX.district %>:</div>
+            <div class="col-9 p-2 fs-5 d-block">อำเภอ/เขต* : <%=dataUserX.county %></div>
+            <div class="col-9 p-2 fs-5 d-block">รหัสไปษณีย์* : <%=dataUserX.postalcode %></div>
+            <div class="col-9 p-2 fs-5 d-block">อีเมล* : <%=dataUserX.email %></div>
+            <div class="col-9 p-2 fs-5 d-block">ไลน์ไอดี* : <%=dataUserX.line %></div>
+            <form action="/order/success" method="post">
+              <button class="btn btn-success w-100 mt-2" type="submit">ยืนยัน</button>
+            </form>
+            <div>
+              <button class="btn btn-danger w-100 mt-2 mb-2"  onclick="javascript:window.history.back()">แก้ไข</button>
+            </div>
+            
           </div>
-         <section class="text-center">
-          <form action="" method="post">
-            <button class="btn btn-primary w-100 mt-2" type="submit">ยืนยัน</button>
-          </form>
-          <form action="/md-skincare-cream" method="get">
-            <button class="btn btn-danger w-100 mt-2" type="submit">แก้ไข</button>
-          </form>
-         </section>
-         
-         
     </div>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
