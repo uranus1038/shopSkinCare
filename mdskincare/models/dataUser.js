@@ -10,7 +10,8 @@ const userSchema = new Schema({
   county : String , 
   postalcode : String , 
   email : String , 
-  line : String  
+  line : String  ,
+  code : String
 
  
 });

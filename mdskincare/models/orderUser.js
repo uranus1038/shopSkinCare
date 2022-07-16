@@ -5,11 +5,10 @@ const {body , validationResult} = require('express-validator');
 const { render } = require('ejs');
 const app = express();
 app.use(express.urlencoded({extended : false}));
-var dataUserX 
-
+var dataUserXY;
+const generateNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 order = app.post('/',
 [
-    
     body('name' , "* กรุณากรอกชื่อของคุณ!").not().isEmpty()  ,
     body('tel' , "* กรุณากรอกเบอร์โทรให้ถูกต้อง!").trim().isLength({min : 9}),
     body('address' , "* กรุณากรอกที่อยู่ของคุณ!").not().isEmpty(),
@@ -22,19 +21,16 @@ order = app.post('/',
     const validation_result = validationResult(req);
     if(validation_result.isEmpty())
     {
-        const userData = new dataUser(req.body);
-        await userData.save();
+        req.body.code = "DOM" + generateNumber(100000,900000);
+        (req.body.email=="") ? req.body.email = "ไม่ได้ป้อนข้อมูล" : req.body.email ; 
+        (req.body.line =="") ? req.body.line  = "ไม่ได้ป้อนข้อมูล" : req.body.line ; 
+        dataUserXY = req.body ;
         
         await res.render('orderConfirm',
         {
             dataUserX : req.body,
-            
         });
-        (dataUserX) ? dataUserX.email : 'ไม่ได้ป้อนข้อมูล';
-        (dataUserX) ? dataUserX.line : 'ไม่ได้ป้อนข้อมูล';
-      
-       
-    }
+ }
     else
     {
         let allErrors = validation_result.errors.map((error) =>
@@ -49,7 +45,17 @@ order = app.post('/',
     }
 });
 success = app.post ('/success', async (req , res) => {
-    res.render('success')
+    const codeX =  dataUser.findOne({dataUserXY})
+    if(codeX.code == dataUserXY.code)
+    {
+        return res.redirect("/");
+    }
+    else
+    {
+          const userData = new dataUser(dataUserXY);
+          await userData.save();
+          res.render('success',{dataUser : dataUserXY});
+    }
 })
 
 module.exports = order;
