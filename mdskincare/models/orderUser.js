@@ -45,21 +45,21 @@ order = app.post('/',
             })
     }
 });
-success = app.post ('/success', async (req , res) => {
-    const codeX = await dataUser.findOne({
-        UMICode,
-      });
+success = app.post ('/success',  async(req , res) => {
+    console.log(UMICode);
+    const codeX = await dataUser.findOne({code : UMICode });
     console.log(codeX);
-    // if(codeX.code)   
-    // {
-    //     return res.redirect("/");
-    // }
-    // else
-    // {
-    //       const userData = new dataUser(dataUserXY);
-    //       await userData.save();
-    //       res.render('success',{dataUser : dataUserXY});
-    // }
+    if(codeX != null)   
+    {
+        return res.redirect("/");
+    }
+    else
+    {
+        const userData = new dataUser(dataUserXY);
+        await userData.save();
+        res.render('success',{dataUser : dataUserXY});
+    }
+    
 })
 
 module.exports = order;
