@@ -6,6 +6,7 @@ const { render } = require('ejs');
 const app = express();
 app.use(express.urlencoded({extended : false}));
 var dataUserXY;
+var UMICode ;
 const generateNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 order = app.post('/',
 [
@@ -25,7 +26,7 @@ order = app.post('/',
         (req.body.email=="") ? req.body.email = "ไม่ได้ป้อนข้อมูล" : req.body.email ; 
         (req.body.line =="") ? req.body.line  = "ไม่ได้ป้อนข้อมูล" : req.body.line ; 
         dataUserXY = req.body ;
-        
+        UMICode = req.body.code ; 
         await res.render('orderConfirm',
         {
             dataUserX : req.body,
@@ -45,17 +46,20 @@ order = app.post('/',
     }
 });
 success = app.post ('/success', async (req , res) => {
-    const codeX =  dataUser.findOne({dataUserXY})
-    if(codeX.code == dataUserXY.code)
-    {
-        return res.redirect("/");
-    }
-    else
-    {
-          const userData = new dataUser(dataUserXY);
-          await userData.save();
-          res.render('success',{dataUser : dataUserXY});
-    }
+    const codeX = await dataUser.findOne({
+        UMICode,
+      });
+    console.log(codeX);
+    // if(codeX.code)   
+    // {
+    //     return res.redirect("/");
+    // }
+    // else
+    // {
+    //       const userData = new dataUser(dataUserXY);
+    //       await userData.save();
+    //       res.render('success',{dataUser : dataUserXY});
+    // }
 })
 
 module.exports = order;
