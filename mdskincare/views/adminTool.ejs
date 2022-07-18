@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>มาร์หน้าทองคำสวยขั้นเทพ พี่ดม</title>
+</head>
+<body class="container" style="margin-top: 50px;">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-link">Product</li>
+                <li class="nav-link ms-auto">
+                    <a href="" class="nav-link active">AddProduct</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <% if(data.length){%>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">tel</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Province</th>
+                            <th scope="col">District</th>
+                            <th scope="col">PostalCode</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Line</th>
+                            <th scope="col">Code</th>
+                            <th width="150px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i< data.length; i++) {%>
+                            <tr>
+                                <th scope="row"><%= (i+1)%></th>
+                                <td><%= data[i].name%></td>
+                                <td><%= data[i].tel%></td>
+                                <td><%= data[i].address%></td>
+                                <td><%= data[i].province%></td>
+                                <td><%= data[i].district%></td>
+                                <td><%= data[i].postalcode%></td>
+                                <td><%= data[i].email%></td>
+                                <td><%= data[i].line%></td>
+                                <td><%= data[i].code%></td>
+                                <td>
+                                    <a href="" class="btn btn-success">Edit</a>
+                                    <a href="" class="btn btn-danger">delete</a>
+                                </td>
+                                
+                            </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            <%}%>
+        </div>
+    </div>
+   
+</body>
+</html>

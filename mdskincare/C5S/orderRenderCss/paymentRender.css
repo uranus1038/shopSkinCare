@@ -9,16 +9,27 @@
 .payment
 {
     color: var(--black);
-    font-size: 20px;
-    width: 35rem;
+    font-size: 15px;
+    width: 21.8%;
     margin: 2rem auto;
     border: 1px var(--black) solid;
     padding: 1.8rem;
     margin-bottom: 2.5rem;
     border-radius: 8px;
+    display: inline-block;
+  
+   overflow: hidden;
 }
 .payment i
 {
-   font-size: 20px;
+   font-size: 15px;
    color: var(--black);
+}
+@media (max-width:700px)
+{
+    .payment
+    {
+        width: 98%;
+        display: block;
+    }
 }

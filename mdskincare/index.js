@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const OrderX = require('./models/orderUser');
+const userAdmin = require('./models/loginRoutes');
 const trackingX = require('./models/tracking');
 app.use(express.urlencoded({extended : false}));
 app.use(express.static(__dirname + '/C5S'))
@@ -16,10 +17,15 @@ let PORT = process.env.PORT || 8000 ;
 // Aumx.save().then(()=>{console.log("success")});
 
 app.use('/order',OrderX) ;
+app.use('/admin-tool',userAdmin) ;
 app.use('/parcel-tracking',trackingX) ;
 app.get('/', (req,res) => { 
     res.render('moblieHome');
 });
+app.get('/Admin', (req,res) => { 
+    res.render('Admin');
+});
+
 app.get('/md-skincare-cream', (req,res) => { 
     res.render('order');
 });

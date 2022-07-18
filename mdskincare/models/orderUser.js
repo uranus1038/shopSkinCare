@@ -3,6 +3,7 @@ const dataUser = require('../models/dataUser')
 const express = require('express');
 const {body , validationResult} = require('express-validator');
 const { render } = require('ejs');
+const { json } = require('express');
 const app = express();
 app.use(express.urlencoded({extended : false}));
 var dataUserXY;
